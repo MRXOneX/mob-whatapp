@@ -1,16 +1,14 @@
-import * as React from "react";
-import { View, Text } from "react-native";
+import React from 'react'
+import StackNavigation from './src/StackNavigation'
+import { NavigationContainer } from '@react-navigation/native'
+import { AuthProvider } from './src/useAuth'
 
 export default function App() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Universal React with Expo</Text>
-    </View>
-  );
+	return (
+		<NavigationContainer>
+			<AuthProvider>
+				<StackNavigation />
+			</AuthProvider>
+		</NavigationContainer>
+	)
 }
